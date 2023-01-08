@@ -11,12 +11,12 @@
 static const int BUFFSIZE = 20;
 int main(int argc, char *argv[]){
 
-    if(argc < 3 || argc  > 4) //Testing for correct number of arguments
-        DieWithUserMessage("Parameter(s)","<Server Address> <Echo Word> [<Server Port]");
+    // if(argc < 3 || argc  > 4) //Testing for correct number of arguments
+    //     DieWithUserMessage("Parameter(s)","<Server Address> <Echo Word> [<Server Port]");
 
 
-        char *servIP = "192.168.8.100"; //First arg: server IP address
-        char *echoString = argv[2]; //send arg: string to echo
+        char *servIP = "192.168.8.101"; //First arg: server IP address
+        char *echoString = argv[1]; //send arg: string to echo
 
         //checking for the thrid string which is optional 7 is well-known wcho port
 
@@ -47,6 +47,7 @@ int main(int argc, char *argv[]){
     
     servAddr.sin_port = htons(servPOrt); //server port
     //establih echotringLen 
+
 
             if (connect(sock, (struct sockaddr *) &servAddr, sizeof(servAddr)) < 0)
               DieWithSystemMessage("connect() failed");
